@@ -43,32 +43,22 @@ img {
 }
 
 nav a {
-    margin-left: 30px;
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: 500;
     position: relative;
-    transition: 0.3s ease;
 }
 
-/* Animated underline */
 nav a::after {
     content: "";
     position: absolute;
+    left: 0;
+    bottom: -4px;
     width: 0%;
     height: 2px;
     background: #00e5ff;
-    left: 0;
-    bottom: -6px;
-    transition: 0.3s ease;
+    transition: width 0.3s ease;
 }
 
 nav a:hover::after {
     width: 100%;
-}
-
-nav a:hover {
-    color: #00e5ff;
 }
 
 /* Contact button style */
@@ -655,16 +645,31 @@ header.scrolled {
 
 /* ================= SERVICE CARD HOVER UPGRADE ================= */
 .service-card {
-    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    backdrop-filter: blur(20px);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.service-card:hover h3 {
-    color: #0077b6;
+.service-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(0,229,255,0.2), transparent 70%);
+    transform: rotate(0deg);
+    transition: 0.8s ease;
 }
 
-.service-card:hover .icon {
-    transform: rotate(10deg) scale(1.2);
-    transition: 0.4s;
+.service-card:hover::before {
+    transform: rotate(25deg);
+}
+
+.service-card:hover {
+    transform: translateY(-15px) scale(1.03);
 }
 
 /* ================= HEADER SCROLL EFFECT ================= */
@@ -1321,3 +1326,458 @@ html {
     z-index: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+.btn {
+    transition: transform 0.3s ease;
+}
+
+/* ================= COURSES SECTION ================= */
+
+.courses-section {
+    padding: 100px 10%;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #ffffff;
+    text-align: center;
+}
+
+.courses-section .section-title {
+    font-size: 36px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.courses-section .section-title span {
+    color: #00e0ff;
+}
+
+.courses-section .services-subtitle {
+    color: #cfd8dc;
+    margin-bottom: 60px;
+}
+
+.courses-section .service-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border-radius: 15px;
+    padding: 30px;
+    transition: 0.3s ease;
+    color: #ffffff;
+}
+
+.courses-section .service-card h3 {
+    margin: 15px 0;
+    color: #ffffff;
+}
+
+.courses-section .service-card p {
+    color: #d0d0d0;
+}
+
+.courses-section .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 224, 255, 0.3);
+}
+
+/* Make entire service card clickable */
+.service-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* Add hover animation for premium feel */
+.service-link:hover {
+    transform: translateY(-8px);
+    transition: 0.3s ease;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #1a1a1a;
+    min-width: 200px;
+    border-radius: 8px;
+    padding: 10px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.dropdown-content a:hover {
+    background: #2d2d2d;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ================= CLEAN COURSES (FINAL) ================= */
+
+.courses-section {
+    padding: 100px 8%;
+    background: #0f172a;
+    text-align: center;
+}
+
+.courses-section .section-title {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.courses-section .section-title span {
+    color: #00e5ff;
+}
+
+.courses-section .services-subtitle {
+    color: #94a3b8;
+    margin-bottom: 60px;
+}
+
+.courses-section .services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+}
+
+.courses-section .service-card {
+    background: #1e293b;
+    padding: 35px 25px;
+    border-radius: 18px;
+    text-align: center;
+    transition: 0.4s ease;
+    border: none;
+}
+
+.courses-section .service-card h3 {
+    color: #ffffff;
+}
+
+.courses-section .service-card p {
+    color: #cbd5e1;
+}
+
+.courses-section .service-card .icon {
+    font-size: 42px;
+    color: #00e5ff;
+    margin-bottom: 20px;
+}
+
+.courses-section .service-card:hover {
+    transform: translateY(-12px);
+    background: #2a3a50;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+}
+
+
+/* ================= FINAL LAYOUT FIX (DO NOT REMOVE) ================= */
+
+/* Force dark background for all main sections */
+.hero,
+.services,
+.about-section,
+.courses-section,
+.stats-section,
+.contact-section {
+    background: #0f172a !important;
+    position: relative;
+    z-index: 1;
+}
+
+/* Force proper section spacing */
+section {
+    padding: 100px 8% !important;
+}
+
+/* Fix section title visibility */
+.section-title {
+    font-size: 40px !important;
+    text-align: center !important;
+    margin-bottom: 20px !important;
+    background: none !important;
+    -webkit-text-fill-color: #ffffff !important;
+    color: #ffffff !important;
+}
+
+/* Fix subtitle */
+.services-subtitle {
+    color: #94a3b8 !important;
+    margin-bottom: 60px !important;
+    text-align: center;
+}
+
+/* Fix service & course cards */
+.service-card {
+    background: #1e293b !important;
+    border-radius: 16px !important;
+    padding: 30px !important;
+    color: #ffffff !important;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+/* Fix card text */
+.service-card p {
+    color: #cbd5e1 !important;
+}
+
+/* Fix grid layout */
+.services-container {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+    gap: 40px !important;
+}
+
+/* Fix hero text */
+.hero h1,
+.hero p {
+    color: #ffffff !important;
+}
+
+/* Remove unwanted gradients */
+.about-section::before,
+.hero::before {
+    display: none !important;
+}
+
+/* ================= COURSES PAGE FIX ================= */
+
+body {
+    background: #0f172a;
+    color: #ffffff;
+}
+
+/* Hero header */
+.page-hero {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    padding: 120px 8% 80px;
+    text-align: center;
+}
+
+.page-hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-desc {
+    color: #cbd5e1;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* Main course sections */
+.course-section {
+    background: #0f172a;
+    padding: 100px 8%;
+}
+
+.course-section.alt-bg {
+    background: #111827;
+}
+
+/* Section header */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.section-header p {
+    color: #94a3b8;
+}
+
+/* Grid layout */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+}
+
+/* Cards */
+.course-card {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    transition: 0.4s ease;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.course-card ion-icon {
+    font-size: 40px;
+    color: #00e5ff;
+    margin-bottom: 20px;
+}
+
+.course-card h3 {
+    margin-bottom: 15px;
+}
+
+.course-card p {
+    color: #cbd5e1;
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    background: #2a3a50;
+}
+
+/* CTA section */
+.cta-section {
+    background: #0b1220;
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.cta-box {
+    background: #1e293b;
+    padding: 60px;
+    border-radius: 20px;
+}
+
+.btn-primary {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: #00e5ff;
+    color: #000;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: #00bcd4;
+}
+/* ================= HOMEPAGE COURSES ================= */
+
+.courses-section {
+    background: #0f172a;
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.courses-section .section-title {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.courses-section .section-title span {
+    color: #00e5ff;
+}
+
+.courses-section .section-subtitle {
+    color: #94a3b8;
+    margin-bottom: 60px;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+}
+
+.courses-grid .course-card {
+    background: #1e293b;
+    padding: 35px 25px;
+    border-radius: 18px;
+    transition: 0.4s ease;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.courses-grid .course-card h3 {
+    margin-bottom: 15px;
+}
+
+.courses-grid .course-card p {
+    color: #cbd5e1;
+}
+
+.courses-grid .course-card:hover {
+    transform: translateY(-12px);
+    background: #2a3a50;
+}
+.course-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+nav a.active {
+    color: #00c3ff; /* or your brand color */
+    font-weight: 600;
+    border-bottom: 2px solid #00c3ff;
+}
+nav a.active-link {
+    color: #00c3ff;   /* your brand color */
+    font-weight: 600;
+    border-bottom: 2px solid #00c3ff;
+}
+
+.stats-section {
+    padding: 80px 20px;
+    background-color: #0A192F !important;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+}
+
+.stat-box h2 {
+    font-size: 42px;
+    color: #00BFFF !important;
+}
+
+.stat-box p {
+    color: white !important;
+}
+.stats-section {
+    padding: 80px 20px;
+    background-color: #0A192F;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+    background: transparent; /* IMPORTANT */
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}

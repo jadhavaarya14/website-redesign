@@ -2,56 +2,173 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Contact | Capernaum Solutions</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Capernaum Solutions Pvt. Ltd</title>
+
+<meta name="description" content="Contact Capernaum Solutions Pvt. Ltd in Viman Nagar, Pune. Get expert support in customer service, IT solutions, lead generation, and digital marketing.">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
 
-<header>
-    <div class="logo">Capernaum Solutions</div>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html" class="active-link">Contact</a>
-        <a href="careers.html">Careers</a>
-    </nav>
-</header>
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-logo">
+            <img src="images/capernaum_12.png" alt="Capernaum Solutions Pvt. Ltd" class="logo-img">
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="careers.html">Careers</a>
+            <a href="contact.html" class="active-link">Contact</a>
+        </div>
+    </div>
+</nav>
 
-<section class="page-hero contact-hero">
-    <div class="hero-content reveal">
-        <h1>Let’s Connect</h1>
-        <p>We’re ready to help your business grow.</p>
+<!-- HERO -->
+<section class="page-hero">
+    <div class="container">
+        <div class="section-label">Let’s Connect</div>
+        <h1>Partner With <span class="gradient-text">Capernaum Solutions</span></h1>
+        <p>
+            Whether you need customer support, IT solutions, or business growth strategies, 
+            our team is ready to assist you 24/7.
+        </p>
     </div>
 </section>
 
-<section class="contact-modern">
-    <div class="contact-grid">
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+    <div class="container">
+        <div class="contact-grid">
 
-        <div class="contact-info reveal">
-            <h2>Contact Information</h2>
-            <p>Email: info@capernaumsolutions.com</p>
-            <p>Phone: +91 98765 43210</p>
-            <p>Location: Pune, Maharashtra</p>
+            <!-- CONTACT INFO -->
+            <div>
+
+                <div class="contact-info-card">
+                    <div class="info-icon"><ion-icon name="location-outline"></ion-icon></div>
+                    <h3>Visit Our Office</h3>
+                    <p>
+                        Office No. 507, East Court,<br>
+                        Viman Nagar, Pune,<br>
+                        Maharashtra, India
+                    </p>
+                </div>
+
+                <div class="contact-info-card">
+                    <div class="info-icon"><ion-icon name="call-outline"></ion-icon></div>
+                    <h3>Call Us</h3>
+                    <p>+91 204 513 2366</p>
+                </div>
+
+                <div class="contact-info-card">
+                    <div class="info-icon"><ion-icon name="mail-outline"></ion-icon></div>
+                    <h3>Email Us</h3>
+                    <p>contactus@capernaum.in</p>
+                </div>
+
+                <div class="contact-info-card">
+                    <div class="info-icon"><ion-icon name="time-outline"></ion-icon></div>
+                    <h3>Availability</h3>
+                    <p>24/7 Support — We’re Always Here For You</p>
+                </div>
+
+            </div>
+
+            <!-- CONTACT FORM -->
+            <div class="contact-form-card">
+                <h3 style="font-size: 26px; font-weight: 800; margin-bottom: 10px;">
+                    Tell Us About Your Requirements
+                </h3>
+                <p style="color: var(--text-secondary); margin-bottom: 30px;">
+                    Fill out the form below and our team will respond within 24 hours.
+                </p>
+
+                <form id="contactForm">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" name="firstName" placeholder="John" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" name="lastName" placeholder="Doe" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" name="email" placeholder="john.doe@company.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" name="phone" placeholder="+91 98765 43210">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Service Interested In</label>
+                        <select name="service" required>
+                            <option value="">Select a service...</option>
+                            <option>Customer Support</option>
+                            <option>Quality Assurance</option>
+                            <option>Lead Generation</option>
+                            <option>IT Solutions</option>
+                            <option>Digital Marketing</option>
+                            <option>Market Research</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Your Message</label>
+                        <textarea name="message" rows="5" placeholder="Tell us about your project or requirements..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">
+                        Send Message
+                    </button>
+
+                </form>
+            </div>
+
         </div>
-
-        <div class="contact-form-modern reveal">
-            <form>
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea rows="5" placeholder="Your Message"></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-
     </div>
 </section>
 
-<footer>
-    © 2026 Capernaum Solutions
+<!-- TRUST CTA -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-banner">
+            <h2>
+                Let’s Build Stronger Customer Connections 
+                With <span class="gradient-text">Capernaum Solutions</span>
+            </h2>
+            <p>
+                We specialize in delivering professional communication, efficient processes, 
+                and measurable results for businesses worldwide.
+            </p>
+            <a href="services.html" class="btn-primary">Explore Our Services</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <p>&copy; 2026 Capernaum Solutions Pvt. Ltd. All Rights Reserved.</p>
+        </div>
+    </div>
 </footer>
 
-<script src="script.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
